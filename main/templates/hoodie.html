@@ -1,0 +1,234 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,600,700" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link href="album.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+<style>
+
+ body {
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+  }
+
+ .selector-for-some-widget {
+  box-sizing: content-box;
+}
+  
+  .kinds ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .kinds li {
+    font-weight: 200;
+    letter-spacing: 2px;
+    padding: 20px;
+  }
+
+  .kinds a{
+      text-decoration: none;
+      color: gray;
+  }
+
+  .kinds a:hover {
+    letter-spacing: 8px;
+    color: rosybrown;
+    font-weight: bold;
+  }
+  
+  #main {
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    width: 400px;
+    
+    
+  }
+  
+  h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  h2 {
+    border: 1px dotted red;
+    color: black;
+    font-size: 14px;
+    line-height: 48px;
+    padding: 20px 30px;
+    margin: 30px 20px;
+    text-align: center;
+  }
+  
+  h3 {
+    color: red;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 20px 10px;
+  }
+  
+  p {
+    color: grey;
+    font-size: 16px;
+    line-height: 48px;
+    margin-top: 60px;
+    padding: 10px 20px;
+  }
+  
+  
+
+  .login {
+    padding-top: 20px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  .login a {
+    text-decoration: none;
+    font-weight: bold;
+    padding-right: 24px;
+    font-size: 30px;
+    color: black;
+  }
+
+  .login a:hover{
+      color: green;
+  }
+
+  #hoodie{
+      color: red;
+      font-weight: bold;
+  }
+
+/* 여기 아래부터 부트 스트랩 앨범 css 파트*/
+
+ .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+</style>
+</head>
+<body>
+
+  <nav class="kinds">
+    <ul>
+      <li><a href="#" id="hoodie">HOODIE<a></li>
+      <li><a href="#">CREWNECK<a></li>
+      <li><a href="#">PANTS<a></li>
+      <li><a href="#">OUTER<a></li>
+      <li><a href="#">ACCESSORIES<a></li>
+    </ul>
+  </nav>
+
+    <div class="login">
+    <a href="{% url 'home' %}">HOME</a>
+    <a href="{% url 'signup' %}">JOIN</a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">LOGOUT</a>
+    {% else %}
+      <a href="{% url 'login' %}">LOGIN</a>
+    {%endif%}
+    </div>
+
+  {# 여기서부터 부트스트랩 코드 사용한 부분---------------------#}
+
+<main role="main">
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+          <img src="{% static 'hoodie1.jpg' %}" height=400 alt="후드">
+            <div class="card-body">
+              <p class="card-text">HOODIE1<br>49,000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                 <a href="{% url 'detail'%}" class="btn btn-sm btn-outline-secondary">Detail</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+           <img src="{% static 'hoodie2.jpg' %}" height=400 alt="후드">
+            
+            <div class="card-body">
+              <p class="card-text">HOODIE2<br>79,000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="{% url 'detail'%}" class="btn btn-sm btn-outline-secondary">Detail</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+           <img src="{% static 'hoodie3.jpg' %}" height=400 alt="후드">
+            
+            <div class="card-body">
+              <p class="card-text">HOODIE3<br>59,000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{% url 'detail'%}" class="btn btn-sm btn-outline-secondary">Detail</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">Add to Cart</a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+
+
+  <div id="main" class="content">
+    <p>CREATED BY 7th LIKELION 회기 3팀</p>
+  </div>
+</body>
+</html>

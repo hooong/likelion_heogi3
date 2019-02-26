@@ -1,0 +1,162 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,600,700" rel="stylesheet">
+  <meta charset="utf-8">
+</head>
+<style>
+body {
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .kinds ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .kinds li {
+    font-weight: 200;
+    letter-spacing: 2px;
+    padding: 20px;
+  }
+
+  .kinds a{
+      text-decoration: none;
+  }
+
+  .kinds a:hover {
+    letter-spacing: 8px;
+    color: rosybrown;
+    font-weight: bold;
+  }
+  
+  #banner {
+    background-image: url("{% static 'main.jpg' %}");
+    background-size: cover;
+    background-position: bottom center;
+    height: 700px;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  
+  #banner .content h1 {
+    border: 4px solid white;
+    position: relative;
+    top: 80px;
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  #main {
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+    width: 400px;
+    
+    
+  }
+  
+  h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  h2 {
+    border: 1px dotted red;
+    color: black;
+    font-size: 14px;
+    line-height: 48px;
+    padding: 20px 30px;
+    margin: 30px 20px;
+    text-align: center;
+  }
+  
+  h3 {
+    color: red;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 20px 10px;
+  }
+  
+  p {
+    color: grey;
+    font-size: 16px;
+    line-height: 48px;
+    margin-top: 60px;
+    padding: 10px 20px;
+  }
+  
+  .pull-quote {
+    margin: 0 auto;
+    width: 400px;
+    
+  }
+  
+
+  .login {
+    padding-top: 20px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  .login a {
+    text-decoration: none;
+    font-weight: bold;
+    padding-right: 24px;
+    font-size: 30px;
+    color: black;
+  }
+
+  .login a:hover{
+      color: green;
+  }
+
+</style>
+<body>
+
+  <nav class="kinds">
+    <ul>
+      <li><a href="{% url 'hoodie' %}">HOODIE<a></li>
+      <li><a href="{% url 'hoodie' %}">CREWNECK<a></li>
+      <li><a href="{% url 'hoodie' %}">PANTS<a></li>
+      <li><a href="{% url 'hoodie' %}">OUTER<a></li>
+      <li><a href="{% url 'hoodie' %}">ACCESSORIES<a></li>
+    </ul>
+  </nav>
+
+  <div id="banner">
+    <div class="content">
+      <h1>HACK YOUR LIFE LIKELION SHOPPING MALL</h1>
+    </div>
+  </div>
+
+    <div class="login">
+    <a href="{% url 'signup' %}">JOIN</a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">LOGOUT</a>
+    {% else %}
+      <a href="{% url 'login' %}">LOGIN</a>
+    {%endif%}
+    </div>
+
+
+  <div id="main" class="content">
+    <h3>CLOTHES ARE THE IDENTITY OF YOURSELF</h3>
+
+    <div class="pull-quote">
+      <h2>"SHOW YOUR IDENTITY, CHARM, THOUGHTS WITH THE CLOTHES"</h2>
+    </div>
+
+    <p>CREATED BY 7th LIKELION 회기 3팀</p>
+  </div>
+
+</body>
+</html>

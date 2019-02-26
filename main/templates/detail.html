@@ -1,0 +1,109 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
+
+
+    <style>
+
+  .login a {
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 24px;
+    font-size: 30px;
+    color: black;
+  }
+
+  .login a:hover{
+      color: green;
+  }
+
+  #overlay{
+      text-align: center;
+      font-family: 'Rubik';
+  }
+
+  #overlay h1{
+      font-size: 38px;
+  }
+
+  section {
+      padding: 15px;
+  }
+
+  body{
+
+  }
+
+  #bt_buy {
+      font-size: 23px;
+      font-height: bold;
+      background-color: white;
+  }
+
+    p {
+    color: grey;
+    font-size: 16px;
+    line-height: 48px;
+    margin-top: 60px;
+    padding: 10px 20px;
+  }
+
+    #main {
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    width: 400px;
+
+
+    </style>
+  </head>
+  <body>
+        <div class="login">
+        <a href="{% url 'home' %}">HOME</a>
+        </div>
+    <section id="overlay">
+      <form>
+        <h1>VANS XXXX</h1>
+        <img src="{% static 'hoodie1.jpg' %}" height=400 alt="후드">
+        <section class="num">
+          <label for="amount">구매 수량</label>
+          <input type="number" min="1" max="10" name="amount" id="amount" value="1">
+        </section>
+        
+        <section class="toppings">
+          <span>사이즈</span>
+          <br>
+          <input type="checkbox" name="s">
+          <label for="lettuce">S</label>
+          <input type="checkbox" name="m">
+          <label for="tomato">M</label>
+          <input type="checkbox" name="l">
+          <label for="onion">L</label>
+        </section>
+        
+
+        <section class="cheesy">
+          <span>디자인</span>
+          <br>
+          <input type="checkbox" name="black">
+          <label for="lettuce">검정색</label>
+          <input type="checkbox" name="red">
+          <label for="tomato">빨강색</label>
+          <input type="checkbox" name="gray">
+          <label for="onion">회색</label>
+        </section>
+        
+        <input type="submit" id="bt_buy" value="구매">
+      </form>
+    </section>
+    <hr>
+
+    <div id="main" class="content">
+    <p>CREATED BY 7th LIKELION 회기 3팀</p>
+  </div>
+  </body>
+</html>
