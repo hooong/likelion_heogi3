@@ -9,4 +9,8 @@ urlpatterns = [
     path('/hoodie', views.hoodie, name="hoodie"),
     path('/hoodie/detail', views.detail, name="detail"),
     path('account/', include('account.urls')),
+    path('/crewneck',views.crewneck, name="crewneck"),
+    path('/pants',views.pants, name="pants"),
+    path('/outer', views.outer, name="outer"),
+    path('/accessories', views.accessories, name="accessories"),
 ]

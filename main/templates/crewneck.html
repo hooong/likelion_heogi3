@@ -117,18 +117,9 @@
       color: green;
   }
 
-  #hoodie{
-      color: red;
+  #crewneck{
+      color: #4687c8;
       font-weight: bold;
-  }
-
-  .sideEffect {
-    background-color: #e2f3e3;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -3;
-    transition: all 3s;
   }
 
 /* 여기 아래부터 부트 스트랩 앨범 css 파트*/
@@ -148,10 +139,9 @@
         }
       }
 
-
 </style>
 </head>
-<body class="sideEffect">
+<body>
 
   <nav class="kinds">
     <ul>
@@ -173,7 +163,7 @@
     {%endif%}
     </div>
 
-  {# 여기서부터 부트스트랩 코드 사용한 부분---------------------#}
+  {# 여기서부터 부트스트랩 코드 사용한 부분--------------------- #}
 
 <main role="main">
 
@@ -183,7 +173,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-          <img src="{% static 'hoodie1.jpg' %}" height=400 alt="후드">
+          <img src="{% static 'crew_neck1.jpeg' %}" height=400 alt="후드">
             <div class="card-body">
               <p class="card-text">HOODIE1<br>49,000</p>
               <div class="d-flex justify-content-between align-items-center">
@@ -197,7 +187,7 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-           <img src="{% static 'hoodie2.jpg' %}" height=400 alt="후드">
+           <img src="{% static 'crew_neck2.jpg' %}" height=400 alt="후드">
             
             <div class="card-body">
               <p class="card-text">HOODIE2<br>79,000</p>
@@ -212,7 +202,7 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-           <img src="{% static 'hoodie3.jpg' %}" height=400 alt="후드">
+           <img src="{% static 'crew_neck3.jpg' %}" height=400 alt="후드">
             
             <div class="card-body">
               <p class="card-text">HOODIE3<br>59,000</p>
@@ -235,17 +225,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 
-<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous">
-</script>
 
-<script>
-  $(document).ready(function(){
-    $('body.side').addClass("sideEffect")
-  })
-</script>
 
   <div id="main" class="content">
     <p>CREATED BY 7th LIKELION 회기 3팀</p>
