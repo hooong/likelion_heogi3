@@ -10,8 +10,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '((1nxnt!za!=irn@kk&@d*&147^-+seq49+imnpik853988_f#'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = os.environ.get('DJANO_SECRET_KEY', '((1nxnt!za!=irn@kk&@d*&147^-+seq49+imnpik853988_f#')
+
+# DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
 
 ALLOWED_HOSTS = ['*']
 
@@ -28,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'account.apps.AccountConfig',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     # allauth
     #'allauth',
@@ -134,3 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #SITE_ID = 1
 
 #LOGIN_REDIRECT_URL = '/'
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
